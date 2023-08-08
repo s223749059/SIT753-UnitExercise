@@ -1,17 +1,24 @@
 pipeline {
     agent any
+    tools { 
+        maven 'Maven 3.3.23' 
+        jdk 'jdk8' 
+    }
     environment {
         UNIT_CODE="SIT753 - Professional Practice in IT"
-        UNIT_EXERCISE="Week5 Exercise: Jenkins with pipeline"
+        UNIT_EXERCISE="Week6 Exercise: Jenkins with GitHub"
         DIRECTORY_PATH="/Users/s223749059@deakin.edu.au/path_to_the_directory/sit753unit_exercise/Jenkinsfile"
-        TESTING_ENVIRONMENT="SIT753 Unit Exercise on Week5 - UAT Testing Environment"
-        PRODUCTION_ENVIRONMENT="SIT753 Unit Exercise on Week5 - PROD Production Environment"
+        TESTING_ENVIRONMENT="SIT753 Unit Exercise on Week6 - UAT Testing Environment"
+        PRODUCTION_ENVIRONMENT="SIT753 Unit Exercise on Week6 - PROD Production Environment"
     }
     stages {
         stage('Build') {
             steps {
                 echo "$UNIT_CODE"
-                echo "SIT753 Unit Exercise: Fetch the source code from: $DIRECTORY_PATH"
+                sh '''
+                    echo "PATH = ${PATH}"
+                    echo "M2_HOME = ${M2_HOME}"
+                ''' 
                 echo "SIT753 Unit Exercise: Finished Build stage"
             }
         }
