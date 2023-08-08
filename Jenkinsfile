@@ -53,6 +53,7 @@ pipeline {
             echo "$UNIT_EXERCISE"
         }
         success {
+            echo "SIT753 Unit Exercise: Jenkins with GitHub"
             echo "SIT753 Unit Exercise: Stages completed"
         }
         failure {
