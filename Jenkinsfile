@@ -9,7 +9,10 @@ pipeline {
             steps {
                 echo "$UNIT_CODE"
                 echo "Installing yarn"
-                nodejs('NodeJS 20.5.1') {
+                withGradle() {
+                    sh './gradlew -v'
+                }
+                nodejs('Node-20.5.1') {
                     sh 'yarn install'
                 }
                 echo "SIT753 Unit Exercise: Finished Build stage"
