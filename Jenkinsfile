@@ -10,8 +10,9 @@ pipeline {
             steps {
                 echo "$UNIT_CODE"
                 echo "Installing yarn"
-
                 sh 'npm config ls'
+                sh "npm install -g yarn"
+                sh "yarn install"
                 echo "SIT753 Unit Exercise: Finished Build stage"
             }
         }
