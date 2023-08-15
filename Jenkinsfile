@@ -1,24 +1,17 @@
 pipeline {
     agent any
-    tools { 
-        maven 'Maven 3.3.23' 
-        jdk 'jdk8' 
-    }
     environment {
         UNIT_CODE="SIT753 - Professional Practice in IT"
         UNIT_EXERCISE="Week6 Exercise: Jenkins with GitHub"
-        DIRECTORY_PATH="/Users/s223749059@deakin.edu.au/path_to_the_directory/sit753unit_exercise/Jenkinsfile"
-        TESTING_ENVIRONMENT="SIT753 Unit Exercise on Week6 - UAT Testing Environment"
-        PRODUCTION_ENVIRONMENT="SIT753 Unit Exercise on Week6 - PROD Production Environment"
     }
     stages {
         stage('Build') {
             steps {
                 echo "$UNIT_CODE"
-                sh '''
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
-                ''' 
+                echo "Installing yarn"
+                node.js('Node-20.5.1') {
+                    sh 'yarn install'
+                }
                 echo "SIT753 Unit Exercise: Finished Build stage"
             }
         }
@@ -29,28 +22,27 @@ pipeline {
                 echo "SIT753 Unit Exercise: Finished Test stage"
             }
         }
-        stage('Code Quality Check') {
+        stage('Code Analysis') {
             steps {
-                echo "SIT753 Unit Exercise: Check the quality of the code"
-                echo "SIT753 Unit Exercise: Finished Code Quality Check stage"
+                echo "SIT753 Unit Exercise: Code analysis tool"
+                echo "SIT753 Unit Exercise: Finished Code Analysis stage"
             }
         }
-        stage('Deploy') {
+        stage('Security Scan') {
             steps {
-                echo "SIT753 Unit Exercise: Deploy the application to $TESTING_ENVIRONMENT"
-                echo "SIT753 Unit Exercise: Finished Deploy stage"
+                echo "SIT753 Unit Exercise: Scanning tool"
+                echo "SIT753 Unit Exercise: Finished Security Scan stage"
             }
         }
-        stage('Approval') {
+        stage('Staging') {
             steps {
-                echo "SIT753 Unit Exercise: Perform sleep command for ten seconds"
-                sleep 10
-                echo "SIT753 Unit Exercise: Finished Approval stage"
+                echo "SIT753 Unit Exercise: Integration tests"
+                echo "SIT753 Unit Exercise: Finished Staging stage"
             }
         }
         stage('Deploy to Production') {
             steps {
-                echo "SIT753 Unit Exercise: The application is completed deployed to $PRODUCTION_ENVIRONMENT"
+                echo "SIT753 Unit Exercise: The application is completed deployed to production server"
                 echo "SIT753 Unit Exercise: Finished Deploy to Production stage"
             }
         }
