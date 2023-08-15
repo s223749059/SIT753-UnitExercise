@@ -4,15 +4,19 @@ pipeline {
         UNIT_CODE="SIT753 - Professional Practice in IT"
         UNIT_EXERCISE="Week6 Exercise: Jenkins with GitHub"
     }
-    tools {nodejs "node"}
+    tools {
+        nodejs "node"
+        gradle "gradle"
+    }
     stages {
         stage('Build') {
             steps {
                 echo "$UNIT_CODE"
                 echo "Installing yarn"
-                sh 'npm config ls'
+                sh "npm config ls"
                 sh "npm install -g yarn"
                 sh "yarn install"
+                sh "./gradlew -v"
                 echo "SIT753 Unit Exercise: Finished Build stage"
             }
         }
