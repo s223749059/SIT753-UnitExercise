@@ -6,7 +6,6 @@ pipeline {
     }
     tools {
         nodejs "node"
-        gradle "gradle"
     }
     stages {
         stage('Build') {
@@ -16,7 +15,6 @@ pipeline {
                 sh "npm config ls"
                 sh "npm install -g yarn"
                 sh "yarn install"
-                sh "./gradlew -v"
                 echo "SIT753 Unit Exercise: Finished Build stage"
             }
         }
