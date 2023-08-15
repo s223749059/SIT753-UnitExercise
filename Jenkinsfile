@@ -9,9 +9,7 @@ pipeline {
             steps {
                 echo "$UNIT_CODE"
                 echo "Installing yarn"
-                withGradle() {
-                    sh './gradlew -v'
-                }
+
                 nodejs('Node-20.5.1') {
                     sh 'yarn install'
                 }
