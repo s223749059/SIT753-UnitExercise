@@ -9,7 +9,7 @@ pipeline {
             steps {
                 echo "$UNIT_CODE"
                 echo "Installing yarn"
-                node.js('Node-20.5.1') {
+                nodejs('Node-20.5.1') {
                     sh 'yarn install'
                 }
                 echo "SIT753 Unit Exercise: Finished Build stage"
