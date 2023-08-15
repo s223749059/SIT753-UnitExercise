@@ -6,15 +6,17 @@ pipeline {
     }
     tools {
         nodejs "node"
+        maven "mvn"
     }
     stages {
         stage('Build') {
             steps {
                 echo "$UNIT_CODE"
-                echo "Installing yarn"
+                echo "Installing build tools"
                 sh "npm config ls"
                 sh "npm install -g yarn"
                 sh "yarn install"
+                sh "mvn clean verify"
                 echo "SIT753 Unit Exercise: Finished Build stage"
             }
         }
