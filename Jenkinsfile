@@ -26,16 +26,15 @@ pipeline {
                     echo "SIT753 Unit Exercise: Test stage"
                 }
                 success {
-                    mail to: "s223749059unitexercises@gmail.com",
-                         attachLog: true ,
+                    mail (to: "s223749059unitexercises@gmail.com",
                          subject: "SIT753 UnitExercise Week6 - Jenkins with GitHub - Test stage",
-                         body: "SIT753 Unit Exercise: Stages completed"
+                         body: "SIT753 Unit Exercise: Stages completed")
+                    emailext attachLog: true
                 }
                 failure {
-                    mail to: "s223749059unitexercises@gmail.com",
-                         attachLog: true ,
+                    mail (to: "s223749059unitexercises@gmail.com",
                          subject: "SIT753 UnitExercise Week6 - Jenkins with GitHub - Test stage",
-                         body: "SIT753 Unit Exercise: Review stages"
+                         body: "SIT753 Unit Exercise: Review stages")
                 }
             }
         }
@@ -59,13 +58,11 @@ pipeline {
                 }
                 success {
                     mail to: "s223749059unitexercises@gmail.com",
-                         attachLog: true ,
                          subject: "SIT753 UnitExercise Week6 - Jenkins with GitHub - Security Scan stage",
                          body: "SIT753 Unit Exercise: Stages completed"
                 }
                 failure {
                     mail to: "s223749059unitexercises@gmail.com",
-                         attachLog: true ,
                          subject: "SIT753 UnitExercise Week6 - Jenkins with GitHub - Security Scan stage",
                          body: "SIT753 Unit Exercise: Stages completed"
                 }
@@ -91,13 +88,11 @@ pipeline {
                 }
                 success {
                     mail to: "s223749059unitexercises@gmail.com",
-                         attachLog: true ,
                          subject: "SIT753 UnitExercise Week6 - Jenkins with GitHub - Test on Staging stage",
                          body: "SIT753 Unit Exercise: Stages completed"
                 }
                 failure {
                     mail to: "s223749059unitexercises@gmail.com",
-                         attachLog: true ,
                          subject: "SIT753 UnitExercise Week6 - Jenkins with GitHub - Test on Staging stage",
                          body: "SIT753 Unit Exercise: Stages completed"
                 }
