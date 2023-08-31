@@ -27,6 +27,7 @@ pipeline {
                 }
                 success {
                     echo "SIT753 Unit Exercise: Stages completed",
+                    emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test', 
                     mail to: "s223749059unitexercises@gmail.com",
                     subject: "SIT753 UnitExercise Week6 - Jenkins with GitHub - Test stage",
                     body: "SIT753 Unit Exercise: Stages completed",
