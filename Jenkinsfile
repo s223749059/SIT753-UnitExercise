@@ -30,7 +30,7 @@ pipeline {
                          subject: "SIT753 UnitExercise Week6 - Jenkins with GitHub - Test stage",
                          body: "SIT753 Unit Exercise: Stages completed")
                     emailext (attachLog: true,
-                              to: "s223749059@deakin.edu.au",
+                              to: "s223749059unitexercises@gmail.com",
                               subject: "SIT753 UnitExercise Week6 - Jenkins with GitHub - Test stage",
                               body: "SIT753 Unit Exercise: Stages completed")
                 }
