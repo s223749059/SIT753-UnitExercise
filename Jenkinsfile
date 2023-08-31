@@ -26,14 +26,14 @@ pipeline {
                     echo "SIT753 Unit Exercise: Test stage"
                 }
                 success {
-                    echo "SIT753 Unit Exercise: Stages completed"
+                    echo "SIT753 Unit Exercise: Stages completed",
                     mail to: "s223749059unitexercises@gmail.com",
                     subject: "SIT753 UnitExercise Week6 - Jenkins with GitHub - Test stage",
                     body: "SIT753 Unit Exercise: Stages completed",
                     echo "Finished sending notification emails."
                 }
                 failure {
-                    echo "SIT753 Unit Exercise: Review stages"
+                    echo "SIT753 Unit Exercise: Review stages",
                     mail to: "s223749059unitexercises@gmail.com",
                     subject: "SIT753 UnitExercise Week6 - Jenkins with GitHub - Test stage",
                     body: "SIT753 Unit Exercise: Review stages",
@@ -60,14 +60,14 @@ pipeline {
                     echo "SIT753 Unit Exercise: Security Scan stage"
                 }
                 success {
-                    echo "SIT753 Unit Exercise: Stages completed"
+                    echo "SIT753 Unit Exercise: Stages completed",
                     mail to: "s223749059unitexercises@gmail.com",
                     subject: "SIT753 UnitExercise Week6 - Jenkins with GitHub - Security Scan stage",
                     body: "SIT753 Unit Exercise: Stages completed",
                     echo "Finished sending notification emails."
                 }
                 failure {
-                    echo "SIT753 Unit Exercise: Review stages"
+                    echo "SIT753 Unit Exercise: Review stages",
                     mail to: "s223749059unitexercises@gmail.com",
                     subject: "SIT753 UnitExercise Week6 - Jenkins with GitHub - Security Scan stage",
                     body: "SIT753 Unit Exercise: Stages completed",
@@ -94,14 +94,14 @@ pipeline {
                     echo "SIT753 Unit Exercise: Test on Staging stage"
                 }
                 success {
-                    echo "SIT753 Unit Exercise: Stages completed"
+                    echo "SIT753 Unit Exercise: Stages completed",
                     mail to: "s223749059unitexercises@gmail.com",
                     subject: "SIT753 UnitExercise Week6 - Jenkins with GitHub - Test on Staging stage",
                     body: "SIT753 Unit Exercise: Stages completed",
                     echo "Finished sending notification emails."
                 }
                 failure {
-                    echo "SIT753 Unit Exercise: Review stages"
+                    echo "SIT753 Unit Exercise: Review stages",
                     mail to: "s223749059unitexercises@gmail.com",
                     subject: "SIT753 UnitExercise Week6 - Jenkins with GitHub - Test on Staging stage",
                     body: "SIT753 Unit Exercise: Stages completed",
