@@ -29,7 +29,7 @@ pipeline {
                     mail (to: "s223749059unitexercises@gmail.com",
                          subject: "SIT753 UnitExercise Week6 - Jenkins with GitHub - Test stage",
                          body: "SIT753 Unit Exercise: Stages completed")
-                    emailext attachLog: true
+                    emailext attachLog: true, body: '', subject: ''
                 }
                 failure {
                     mail (to: "s223749059unitexercises@gmail.com",
