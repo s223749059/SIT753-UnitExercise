@@ -26,19 +26,14 @@ pipeline {
                     echo "SIT753 Unit Exercise: Test stage"
                 }
                 success {
-                    echo "SIT753 Unit Exercise: Stages completed",
-                    emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test', 
                     mail to: "s223749059unitexercises@gmail.com",
-                    subject: "SIT753 UnitExercise Week6 - Jenkins with GitHub - Test stage",
-                    body: "SIT753 Unit Exercise: Stages completed",
-                    echo "Finished sending notification emails."
+                         subject: "SIT753 UnitExercise Week6 - Jenkins with GitHub - Test stage",
+                         body: "SIT753 Unit Exercise: Stages completed",
                 }
                 failure {
-                    echo "SIT753 Unit Exercise: Review stages",
                     mail to: "s223749059unitexercises@gmail.com",
-                    subject: "SIT753 UnitExercise Week6 - Jenkins with GitHub - Test stage",
-                    body: "SIT753 Unit Exercise: Review stages",
-                    echo "Finished sending notification emails."
+                         subject: "SIT753 UnitExercise Week6 - Jenkins with GitHub - Test stage",
+                         body: "SIT753 Unit Exercise: Review stages",
                 }
             }
         }
@@ -61,18 +56,14 @@ pipeline {
                     echo "SIT753 Unit Exercise: Security Scan stage"
                 }
                 success {
-                    echo "SIT753 Unit Exercise: Stages completed",
                     mail to: "s223749059unitexercises@gmail.com",
-                    subject: "SIT753 UnitExercise Week6 - Jenkins with GitHub - Security Scan stage",
-                    body: "SIT753 Unit Exercise: Stages completed",
-                    echo "Finished sending notification emails."
+                         subject: "SIT753 UnitExercise Week6 - Jenkins with GitHub - Security Scan stage",
+                         body: "SIT753 Unit Exercise: Stages completed",
                 }
                 failure {
-                    echo "SIT753 Unit Exercise: Review stages",
                     mail to: "s223749059unitexercises@gmail.com",
-                    subject: "SIT753 UnitExercise Week6 - Jenkins with GitHub - Security Scan stage",
-                    body: "SIT753 Unit Exercise: Stages completed",
-                    echo "Finished sending notification emails."
+                         subject: "SIT753 UnitExercise Week6 - Jenkins with GitHub - Security Scan stage",
+                         body: "SIT753 Unit Exercise: Stages completed",
                 }
             }
         }
@@ -95,18 +86,14 @@ pipeline {
                     echo "SIT753 Unit Exercise: Test on Staging stage"
                 }
                 success {
-                    echo "SIT753 Unit Exercise: Stages completed",
                     mail to: "s223749059unitexercises@gmail.com",
-                    subject: "SIT753 UnitExercise Week6 - Jenkins with GitHub - Test on Staging stage",
-                    body: "SIT753 Unit Exercise: Stages completed",
-                    echo "Finished sending notification emails."
+                         subject: "SIT753 UnitExercise Week6 - Jenkins with GitHub - Test on Staging stage",
+                         body: "SIT753 Unit Exercise: Stages completed",
                 }
                 failure {
-                    echo "SIT753 Unit Exercise: Review stages",
                     mail to: "s223749059unitexercises@gmail.com",
-                    subject: "SIT753 UnitExercise Week6 - Jenkins with GitHub - Test on Staging stage",
-                    body: "SIT753 Unit Exercise: Stages completed",
-                    echo "Finished sending notification emails."
+                         subject: "SIT753 UnitExercise Week6 - Jenkins with GitHub - Test on Staging stage",
+                         body: "SIT753 Unit Exercise: Stages completed",
                 }
             }
         }
