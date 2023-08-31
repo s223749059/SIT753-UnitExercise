@@ -20,6 +20,18 @@ pipeline {
                 echo "Performing integration test using tools such as Jvnet."
                 echo "SIT753 Unit Exercise: Finished Test stage"
             }
+            post {
+                always {
+                    echo "$UNIT_EXERCISE"
+                    echo "SIT753 Unit Exercise: Test stage"
+                }
+                success {
+                    echo "SIT753 Unit Exercise: Stages completed"
+                }
+                failure {
+                    echo "SIT753 Unit Exercise: Review stages"
+                }
+            }
         }
         stage('Code Analysis') {
             steps {
@@ -33,6 +45,18 @@ pipeline {
                 echo "SIT753 Unit Exercise: Scanning tool"
                 echo "Applying security scanning with probely-security-plugin."
                 echo "SIT753 Unit Exercise: Finished Security Scan stage"
+            }
+            post {
+                always {
+                    echo "$UNIT_EXERCISE"
+                    echo "SIT753 Unit Exercise: Security Scan stage"
+                }
+                success {
+                    echo "SIT753 Unit Exercise: Stages completed"
+                }
+                failure {
+                    echo "SIT753 Unit Exercise: Review stages"
+                }
             }
         }
         stage('Deploy to Staging') {
@@ -48,6 +72,18 @@ pipeline {
                 echo "Performing integration test using tools such as Jvnet."
                 echo "SIT753 Unit Exercise: Finished Test on Staging stage"
             }
+            post {
+                always {
+                    echo "$UNIT_EXERCISE"
+                    echo "SIT753 Unit Exercise: Test on Staging stage"
+                }
+                success {
+                    echo "SIT753 Unit Exercise: Stages completed"
+                }
+                failure {
+                    echo "SIT753 Unit Exercise: Review stages"
+                }
+            }
         }
         stage('Deploy to Production') {
             steps {
@@ -55,18 +91,6 @@ pipeline {
                 echo "The application is completed deployed to production server such as AWS EMR"
                 echo "SIT753 Unit Exercise: Finished Deploy to Production stage"
             }
-        }
-    }
-    post {
-        always {
-            echo "$UNIT_EXERCISE"
-        }
-        success {
-            echo "SIT753 Unit Exercise: Jenkins with GitHub"
-            echo "SIT753 Unit Exercise: Stages completed"
-        }
-        failure {
-            echo "SIT753 Unit Exercise: Review stages"
         }
     }
 }
