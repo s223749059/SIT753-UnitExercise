@@ -26,12 +26,10 @@ pipeline {
                     echo "SIT753 Unit Exercise: Test stage"
                 }
                 success {
-                    emailext (attachLog: true, 
-                              body: "SIT753 Unit Exercise: Stages completed", 
-                              compressLog: true, 
-                              replyTo: 's223749059unitexercises@gmail.com',
-                              subject: "SIT753 UnitExercise Week6 - Jenkins with GitHub - Test stage", 
-                              to: 's223749059unitexercises@gmail.com')
+                    emailext (to: "s223749059unitexercises@gmail.com",
+                              subject: "SIT753 UnitExercise Week6 - Jenkins with GitHub - Test stage",
+                              body: "SIT753 Unit Exercise: Stages completed",
+                              attachLog: true)
                 }
                 failure {
                     mail (to: "s223749059unitexercises@gmail.com",
