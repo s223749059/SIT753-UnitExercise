@@ -100,6 +100,7 @@ pipeline {
         stage('Deploy to Production') {
             steps {
                 echo "SIT753 Unit Exercise: Production environment"
+                echo "SIT753 Unit Exercise: Improvements on Video Demonstration"
                 echo "The application is completed deployed to production server such as AWS EMR"
                 echo "SIT753 Unit Exercise: Finished Deploy to Production stage"
             }
